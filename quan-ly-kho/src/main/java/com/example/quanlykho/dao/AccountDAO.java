@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AccountDAO {
-    private Connection db;
+    private final Connection db;
 
     public AccountDAO() {
         db = DatabaseConnection.getConnection();
