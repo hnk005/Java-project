@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.quanlykho.controller.DashboardController"
+            prefWidth="1200" prefHeight="750"
+            style="-fx-background-color: #f0f2f5;"
+            stylesheets="@../styles/app.css">
+
+    <!-- TOP NAVBAR -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10"
+              style="-fx-background-color: #1e3a5f; -fx-padding: 12 20 12 20;">
+            <Label text="🏭 QUẢN LÝ KHO" textFill="white">
+                <font>
+                    <Font name="System Bold" size="18"/>
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <VBox alignment="CENTER_RIGHT" spacing="2">
+                <Label fx:id="userNameLabel" text="Người dùng" textFill="white">
+                    <font>
+                        <Font name="System Bold" size="13"/>
+                    </font>
+                </Label>
+                <Label fx:id="userRoleLabel" text="Vai trò" textFill="#aecbf0">
+                    <font>
+                        <Font size="11"/>
+                    </font>
+                </Label>
+            </VBox>
+            <Button text="Đăng xuất" onAction="#onLogout"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 6 14 6 14;">
+                <font>
+                    <Font name="System Bold" size="12"/>
+                </font>
+            </Button>
+        </HBox>
+    </top>
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox spacing="4" style="-fx-background-color: #243b55; -fx-padding: 15 10 15 10;" prefWidth="200">
+            <Button fx:id="btnOverview" text="📊  Tổng quan" maxWidth="Infinity"
+                    onAction="#onOverview" styleClass="sidebar-btn">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Button>
+            <Button fx:id="btnProducts" text="📦  Sản phẩm" maxWidth="Infinity"
+                    onAction="#onProducts" styleClass="sidebar-btn">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Button>
+            <Button fx:id="btnCategories" text="🏷  Danh mục" maxWidth="Infinity"
+                    onAction="#onCategories" styleClass="sidebar-btn">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Button>
+            <Button fx:id="btnSuppliers" text="🏢  Nhà cung cấp" maxWidth="Infinity"
+                    onAction="#onSuppliers" styleClass="sidebar-btn">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Button>
+            <Button fx:id="btnImports" text="📥  Nhập kho" maxWidth="Infinity"
+                    onAction="#onImports" styleClass="sidebar-btn">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Button>
+            <Button fx:id="btnExports" text="📤  Xuất kho" maxWidth="Infinity"
+                    onAction="#onExports" styleClass="sidebar-btn">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Button>
+            <Separator style="-fx-background-color: #4a6fa5;"/>
+            <Button fx:id="btnAccounts" text="👥  Tài khoản" maxWidth="Infinity"
+                    onAction="#onAccounts" styleClass="sidebar-btn">
+                <font>
+                    <Font size="13"/>
+                </font>
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- CENTER CONTENT AREA -->
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #f0f2f5;">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+        </StackPane>
+    </center>
+</BorderPane>
+

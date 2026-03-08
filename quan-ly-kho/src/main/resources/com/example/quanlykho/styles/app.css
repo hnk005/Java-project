@@ -1,0 +1,38 @@
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #c9d8ec;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 15 10 15;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.sidebar-btn:hover {
+    -fx-background-color: #344f6e;
+    -fx-text-fill: white;
+}
+
+.sidebar-btn-active {
+    -fx-background-color: #1a6dbe;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #f5f6fa;
+}
+
+.table-view .column-header .label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #d0e8ff;
+    -fx-text-fill: #1e3a5f;
+}
+

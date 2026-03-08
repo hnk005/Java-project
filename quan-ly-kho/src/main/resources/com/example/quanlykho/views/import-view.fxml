@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="12" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.quanlykho.controller.ImportController"
+      style="-fx-background-color: transparent;">
+
+    <Label text="Quản lý Phiếu Nhập kho" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1e3a5f;"/>
+
+    <VBox spacing="10" VBox.vgrow="ALWAYS"
+          style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="💡 Double-click vào dòng để xem chi tiết phiếu nhập"
+                   style="-fx-text-fill: #888; -fx-font-style: italic;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="＋ Tạo phiếu nhập" onAction="#onAdd"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-font-weight: bold; -fx-padding: 7 16 7 16;"/>
+            <Button text="↺ Làm mới" onAction="#onRefresh"
+                    style="-fx-background-color: #607D8B; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
+        </HBox>
+
+        <TableView fx:id="importTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="Mã phiếu" prefWidth="90"/>
+                <TableColumn fx:id="colSupplier" text="Nhà cung cấp" prefWidth="220"/>
+                <TableColumn fx:id="colAccount" text="Người tạo" prefWidth="180"/>
+                <TableColumn fx:id="colTotal" text="Tổng tiền" prefWidth="180"/>
+                <TableColumn fx:id="colDate" text="Ngày tạo" prefWidth="160"/>
+            </columns>
+            <placeholder>
+                <Label text="Không có dữ liệu"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+</VBox>
+

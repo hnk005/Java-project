@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="12" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.quanlykho.controller.SupplierController"
+      style="-fx-background-color: transparent;">
+
+    <Label text="Quản lý Nhà cung cấp" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1e3a5f;"/>
+
+    <VBox spacing="10" VBox.vgrow="ALWAYS"
+          style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="searchField" promptText="🔍 Tìm kiếm..." prefWidth="280"
+                       style="-fx-background-radius: 5; -fx-border-radius: 5;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="＋ Thêm mới" onAction="#onAdd"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-font-weight: bold; -fx-padding: 7 16 7 16;"/>
+            <Button text="✏ Sửa" onAction="#onEdit"
+                    style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
+            <Button text="🗑 Xóa" onAction="#onDelete"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
+            <Button text="↺ Làm mới" onAction="#onRefresh"
+                    style="-fx-background-color: #607D8B; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
+        </HBox>
+
+        <TableView fx:id="supplierTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colName" text="Tên nhà cung cấp" prefWidth="260"/>
+                <TableColumn fx:id="colPhone" text="Số điện thoại" prefWidth="150"/>
+                <TableColumn fx:id="colAddress" text="Địa chỉ" prefWidth="320"/>
+            </columns>
+            <placeholder>
+                <Label text="Không có dữ liệu"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+</VBox>
+

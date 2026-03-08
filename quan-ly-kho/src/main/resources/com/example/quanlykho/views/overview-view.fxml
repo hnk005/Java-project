@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="20" xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.quanlykho.controller.OverviewController"
+      style="-fx-background-color: transparent;">
+
+    <Label text="Tổng quan" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1e3a5f;"/>
+
+    <!-- STAT CARDS -->
+    <HBox spacing="15">
+        <!-- Card 1 -->
+        <VBox alignment="CENTER" spacing="6" prefWidth="180" prefHeight="100"
+              style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Label text="📦 Tổng sản phẩm" style="-fx-font-size: 12px; -fx-text-fill: #888;"/>
+            <Label fx:id="totalProductsLabel" text="—"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #2196F3;"/>
+        </VBox>
+        <!-- Card 2 -->
+        <VBox alignment="CENTER" spacing="6" prefWidth="180" prefHeight="100"
+              style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Label text="📥 Tổng phiếu nhập" style="-fx-font-size: 12px; -fx-text-fill: #888;"/>
+            <Label fx:id="totalImportsLabel" text="—"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #4CAF50;"/>
+        </VBox>
+        <!-- Card 3 -->
+        <VBox alignment="CENTER" spacing="6" prefWidth="180" prefHeight="100"
+              style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Label text="📤 Tổng phiếu xuất" style="-fx-font-size: 12px; -fx-text-fill: #888;"/>
+            <Label fx:id="totalExportsLabel" text="—"
+                   style="-fx-font-size: 30px; -fx-font-weight: bold; -fx-text-fill: #FF9800;"/>
+        </VBox>
+        <!-- Card 4 -->
+        <VBox alignment="CENTER" spacing="6" prefWidth="220" prefHeight="100"
+              style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Label text="💰 Doanh thu (xuất)" style="-fx-font-size: 12px; -fx-text-fill: #888;"/>
+            <Label fx:id="totalRevenueLabel" text="—"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #9C27B0;"/>
+        </VBox>
+    </HBox>
+
+    <!-- LOW STOCK TABLE -->
+    <VBox spacing="8" VBox.vgrow="ALWAYS"
+          style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);">
+        <padding>
+            <Insets top="15" right="15" bottom="15" left="15"/>
+        </padding>
+        <Label text="⚠ Sản phẩm sắp hết hàng (≤ 10)"
+               style="-fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+        <TableView fx:id="lowStockTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colProductName" text="Tên sản phẩm" prefWidth="280"/>
+                <TableColumn fx:id="colCategoryName" text="Danh mục" prefWidth="180"/>
+                <TableColumn fx:id="colQuantity" text="Số lượng" prefWidth="100"/>
+                <TableColumn fx:id="colPrice" text="Giá bán" prefWidth="160"/>
+            </columns>
+            <placeholder>
+                <Label text="Không có sản phẩm sắp hết hàng 🎉"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+</VBox>
+
