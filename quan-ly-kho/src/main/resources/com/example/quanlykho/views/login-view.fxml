@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="CENTER" prefHeight="350.0" prefWidth="300.0" spacing="15.0" style="-fx-background-color: #f4f4f4;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.quanlykho.controller.LoginController">
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+    </padding>
+    <children>
+        <Label text="ĐĂNG NHẬP" textFill="#333333">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+            <VBox.margin>
+                <Insets bottom="10.0" />
+            </VBox.margin>
+        </Label>
+
+        <VBox spacing="5.0">
+            <children>
+                <Label text="Tên đăng nhập:" textFill="#555555" />
+                <TextField fx:id="usernameField" prefHeight="35.0" promptText="Nhập tài khoản..." style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3;" />
+            </children>
+        </VBox>
+
+        <VBox spacing="5.0">
+            <children>
+                <Label text="Mật khẩu:" textFill="#555555" />
+                <PasswordField fx:id="passwordField" prefHeight="35.0" promptText="Nhập mật khẩu..." style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3;" />
+            </children>
+        </VBox>
+
+        <Button fx:id="loginButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleLogin" prefHeight="35.0" style="-fx-background-color: #0078D7; -fx-text-fill: white; -fx-background-radius: 3; -fx-cursor: hand;" text="Đăng nhập">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="15.0" />
+            </VBox.margin>
+        </Button>
+
+        <Label fx:id="statusLabel" textFill="#e74c3c">
+            <VBox.margin>
+                <Insets top="5.0" />
+            </VBox.margin>
+        </Label>
+    </children>
+</VBox>

@@ -5,6 +5,8 @@ module com.example.quanlykho {
     requires org.controlsfx.controls;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
+    requires mysql.connector.j;
 
     opens com.example.quanlykho to javafx.fxml;
     exports com.example.quanlykho;
