@@ -12,6 +12,7 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.GridPane;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.net.URL;
 import java.util.List;
@@ -33,6 +34,10 @@ public class AccountController implements Initializable {
     private TableColumn<Account, Boolean> colStatus;
     @FXML
     private TextField searchField;
+    @FXML
+    private Button statusToggleBtn;
+    @FXML
+    private FontIcon statusIcon;
 
     private final AccountBus accountBus = new AccountBus();
     private ObservableList<Account> accountList = FXCollections.observableArrayList();
@@ -47,6 +52,7 @@ public class AccountController implements Initializable {
             return new javafx.beans.property.SimpleStringProperty(r != null ? (r == Role.ADMIN ? "Quản trị viên" : "Nhân viên") : "");
         });
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
+        statusIcon.setIconLiteral("mdi-lock");
         colStatus.setCellFactory(col -> new TableCell<>() {
             @Override
             protected void updateItem(Boolean v, boolean empty) {
@@ -58,6 +64,14 @@ public class AccountController implements Initializable {
                     setText(v ? "Hoạt động" : "Khóa");
                     setStyle(v ? "-fx-text-fill: #27ae60;" : "-fx-text-fill: #e74c3c;");
                 }
+            }
+        });
+        statusToggleBtn.setText("Khóa tài khoản");
+        accountTable.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue != null) {
+                Boolean status = newValue.isStatus();
+                statusIcon.setIconLiteral(status ? "mdi-lock" : "mdi-lock-open");
+                statusToggleBtn.setText(status ? "Khóa tài khoản" : "Mở khóa tài khoản");
             }
         });
         loadData();

@@ -5,6 +5,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
 
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
 <BorderPane xmlns="http://javafx.com/javafx/17"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.quanlykho.controller.DashboardController"
@@ -16,7 +18,10 @@
     <top>
         <HBox alignment="CENTER_LEFT" spacing="10"
               style="-fx-background-color: #1e3a5f; -fx-padding: 12 20 12 20;">
-            <Label text="🏭 QUẢN LÝ KHO" textFill="white">
+            <Label text="QUẢN LÝ KHO" textFill="white">
+                <graphic>
+                    <FontIcon iconLiteral="mdi-factory" iconSize="20" iconColor="#3498db"/>
+                </graphic>
                 <font>
                     <Font name="System Bold" size="18"/>
                 </font>
