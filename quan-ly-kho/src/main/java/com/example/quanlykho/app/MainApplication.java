@@ -1,6 +1,7 @@
 package com.example.quanlykho.app;
 
 import com.example.quanlykho.Launcher;
+import com.example.quanlykho.util.DatabaseConnection;
 import com.example.quanlykho.util.JavaFXUtil;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -16,6 +17,7 @@ public class MainApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
+        DatabaseConnection.getConnection();
         Scene scene = JavaFXUtil.createScene("views/login-view.fxml");
         stage.setTitle("Đăng nhập");
         stage.setScene(scene);
@@ -31,5 +33,11 @@ public class MainApplication extends Application {
                 alert.showAndWait();
             });
         });
+    }
+
+    @Override
+    public void stop() throws Exception {
+        super.stop();
+        DatabaseConnection.closeConnection();
     }
 }

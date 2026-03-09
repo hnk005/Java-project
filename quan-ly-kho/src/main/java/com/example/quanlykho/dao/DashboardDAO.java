@@ -31,10 +31,7 @@ public class DashboardDAO {
     }
 
     public List<Product> getLowStockProducts(int threshold) throws SQLException {
-        // TODO: SELECT p.*, c.category_name FROM product p
-        //       LEFT JOIN category c ON p.category_id = c.category_id
-        //       WHERE p.quantity <= ?
-        //       ORDER BY p.quantity ASC
+
         return null;
     }
 }

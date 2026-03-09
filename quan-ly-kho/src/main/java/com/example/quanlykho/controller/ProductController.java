@@ -54,7 +54,7 @@ public class ProductController implements Initializable {
     private void setupTable() {
         colId.setCellValueFactory(new PropertyValueFactory<>("productId"));
         colName.setCellValueFactory(new PropertyValueFactory<>("productName"));
-        colCategory.setCellValueFactory(new PropertyValueFactory<>("categoryName"));
+        colCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
         colQuantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colImage.setCellValueFactory(new PropertyValueFactory<>("imageUrl"));
@@ -170,7 +170,7 @@ public class ProductController implements Initializable {
             ComboBox<Category> categoryBox = new ComboBox<>();
             if (categories != null) categoryBox.setItems(FXCollections.observableArrayList(categories));
             if (isEdit && categories != null) {
-                categories.stream().filter(c -> c.getCategoryId() == product.getCategoryId())
+                categories.stream().filter(c -> c.getCategoryId() == product.getCategory().getCategoryId())
                         .findFirst().ifPresent(categoryBox::setValue);
             }
 
@@ -197,7 +197,7 @@ public class ProductController implements Initializable {
                         Product p = isEdit ? product : new Product();
                         p.setProductName(nameField.getText().trim());
                         Category cat = categoryBox.getValue();
-                        p.setCategoryId(cat != null ? cat.getCategoryId() : 0);
+                        p.setCategory(cat);
                         p.setQuantity(Integer.parseInt(quantityField.getText().trim()));
                         p.setPrice(new BigDecimal(priceField.getText().trim()));
                         p.setImageUrl(imageField.getText().trim());

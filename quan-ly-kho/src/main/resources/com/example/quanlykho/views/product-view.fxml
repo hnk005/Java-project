@@ -4,6 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 <VBox spacing="12" xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.example.quanlykho.controller.ProductController"
@@ -22,14 +23,30 @@
             <TextField fx:id="searchField" promptText="🔍 Tìm kiếm theo tên..." prefWidth="280"
                        style="-fx-background-radius: 5; -fx-border-radius: 5;"/>
             <Region HBox.hgrow="ALWAYS"/>
-            <Button text="＋ Thêm mới" onAction="#onAdd"
-                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-font-weight: bold; -fx-padding: 7 16 7 16;"/>
-            <Button text="✏ Sửa" onAction="#onEdit"
-                    style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
-            <Button text="🗑 Xóa" onAction="#onDelete"
-                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
-            <Button text="↺ Làm mới" onAction="#onRefresh"
-                    style="-fx-background-color: #607D8B; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
+            <Button text="Thêm mới" onAction="#onAdd"
+                    style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-font-weight: bold; -fx-padding: 7 16 7 16;">
+                <graphic>
+                    <FontIcon iconLiteral="mdi-plus" iconSize="20" iconColor="white"/>
+                </graphic>
+            </Button>
+            <Button text="Sửa" onAction="#onEdit"
+                    style="-fx-background-color: #FF9800; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;">
+                <graphic>
+                    <FontIcon iconLiteral="mdi-pencil" iconSize="20" iconColor="white"/>
+                </graphic>
+            </Button>
+            <Button text="Xóa" onAction="#onDelete"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;">
+                <graphic>
+                    <FontIcon iconLiteral="mdi-delete" iconSize="20" iconColor="white"/>
+                </graphic>
+            </Button>
+            <Button text="Làm mới" onAction="#onRefresh"
+                    style="-fx-background-color: #607D8B; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;">
+                <graphic>
+                    <FontIcon iconLiteral="mdi-refresh" iconSize="20" iconColor="white"/>
+                </graphic>
+            </Button>
         </HBox>
 
         <TableView fx:id="productTable" VBox.vgrow="ALWAYS">

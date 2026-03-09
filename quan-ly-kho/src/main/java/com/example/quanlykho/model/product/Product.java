@@ -1,26 +1,27 @@
 package com.example.quanlykho.model.product;
 
+import com.example.quanlykho.model.category.Category;
+
 import java.math.BigDecimal;
 
 public class Product {
     private int productId;
     private String productName;
-    private int categoryId;
-    private String categoryName; // for display
     private int quantity;
     private BigDecimal price;
     private String imageUrl;
+    private Category category;
 
     public Product() {
     }
 
-    public Product(int productId, String productName, int categoryId, int quantity, BigDecimal price, String imageUrl) {
+    public Product(int productId, String productName, int quantity, BigDecimal price, String imageUrl, Category category) {
         this.productId = productId;
         this.productName = productName;
-        this.categoryId = categoryId;
         this.quantity = quantity;
         this.price = price;
         this.imageUrl = imageUrl;
+        this.category = category;
     }
 
     public int getProductId() {
@@ -37,22 +38,6 @@ public class Product {
 
     public void setProductName(String productName) {
         this.productName = productName;
-    }
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
     }
 
     public int getQuantity() {
@@ -78,5 +63,14 @@ public class Product {
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
 }
 

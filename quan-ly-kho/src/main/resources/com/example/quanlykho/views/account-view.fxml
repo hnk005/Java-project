@@ -40,8 +40,12 @@
                     <FontIcon fx:id="statusIcon" iconSize="20" iconColor="white"/>
                 </graphic>
             </Button>
-            <Button text="↺ Làm mới" onAction="#onRefresh"
-                    style="-fx-background-color: #607D8B; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;"/>
+            <Button text="Làm mới" onAction="#onRefresh"
+                    style="-fx-background-color: #607D8B; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 7 16 7 16;">
+                <graphic>
+                    <FontIcon iconLiteral="mdi-refresh" iconSize="20" iconColor="white"/>
+                </graphic>
+            </Button>
         </HBox>
 
         <TableView fx:id="accountTable" VBox.vgrow="ALWAYS">
